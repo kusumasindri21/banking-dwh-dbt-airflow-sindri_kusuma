@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_customer
+    description: "Staging model for customer data"
+    columns:
+      - name: customer_id
+        description: "Primary key for customer"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_account
+    description: "Staging model for account data"
+    columns:
+      - name: account_id
+        description: "Primary key for account"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Foreign key to customer"
+        tests:
+          - not_null
+
+  - name: stg_transaction
+    description: "Staging model for transaction data"
+    columns:
+      - name: transaction_id
+        description: "Primary key for transaction"
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        description: "Foreign key to account"
+        tests:
+          - not_null
