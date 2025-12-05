@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: banking
+    schema: main_main
+    tables:
+      - name: customers
+      - name: accounts
+      - name: transactions

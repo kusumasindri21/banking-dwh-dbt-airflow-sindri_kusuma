@@ -1,0 +1,8 @@
+banking_dw:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: database/banking.dw.duckdb
+      schema: main_main
+      threads: 4

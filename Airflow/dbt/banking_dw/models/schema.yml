@@ -1,0 +1,60 @@
+version: 2
+
+models:
+
+  - name: dim_customer
+    description: "Dimension table containing customer master data."
+    columns:
+      - name: customer_id
+        description: "Surrogate key for uniquely identifying each customer."
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_transaction
+    description: "Fact table storing all financial transactions."
+    columns:
+      - name: transaction_id
+        description: "Unique identifier for each transaction."
+        tests:
+          - unique
+          - not_null
+
+      - name: account_id
+        description: "Foreign key reference to stg_account."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_account')
+                field: account_id
+
+      - name: transaction_date
+        description: "Date when the transaction occurred."
+        tests:
+          - not_null
+
+      - name: amount
+        description: "Transaction amount in currency format."
+        tests:
+          - not_null
+
+  - name: int_daily_balance
+    description: "Daily running balance per account."
+    columns:
+      - name: account_id
+        description: "Foreign key linking to stg_account."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_account')
+                field: account_id
+
+      - name: date
+        description: "The date for the calculated daily balance."
+        tests:
+          - not_null
+
+      - name: running_balance
+        description: "Cumulative balance."
