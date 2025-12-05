@@ -4,5 +4,5 @@ banking_dw:
     dev:
       type: duckdb
       path: database/banking.dw.duckdb
-      schema: main_main    # <-- sesuaikan dengan schema yang ada
+      schema: main_main
       threads: 4

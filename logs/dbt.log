@@ -41,3 +41,18 @@ Happy modeling!
 [0m17:03:44.191731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB98211DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB909C2610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DB909C3190>]}
 [0m17:03:44.191731 [debug] [MainThread]: Flushing usage events
 [0m17:03:46.218802 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:14:42.860557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022F5854F390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022F5854C290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022F585B29D0>]}
+
+
+============================== 09:14:42.870164 | 8db0b135-f7b7-473a-be40-a0c5b3996804 ==============================
+[0m09:14:42.870164 [info ] [MainThread]: Running with dbt=1.10.15
+[0m09:14:42.870164 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'invocation_command': 'dbt clean', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\sindri.fera\\.dbt', 'warn_error': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'version_check': 'True', 'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'write_json': 'True'}
+[0m09:14:42.870164 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\sindri.fera\Documents\banking-dwh-dbt-airflow-sindri_kusuma\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m09:14:42.870164 [debug] [MainThread]: Command `dbt clean` failed at 09:14:42.870164 after 0.12 seconds
+[0m09:14:42.870164 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022F51A02450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022F5761CC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022F582FF050>]}
+[0m09:14:42.870164 [debug] [MainThread]: Flushing usage events
+[0m09:14:44.263276 [debug] [MainThread]: An error was encountered while trying to flush usage events

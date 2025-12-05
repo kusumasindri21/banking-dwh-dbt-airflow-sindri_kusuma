@@ -1,36 +1,51 @@
 version: 2
 
 models:
-  - name: stg_customer
-    description: "Staging model for customer data"
+
+  - name: dim_customer
+    description: "Dimension table containing customer master data."
     columns:
       - name: customer_id
-        description: "Primary key for customer"
         tests:
           - unique
           - not_null
 
-  - name: stg_account
-    description: "Staging model for account data"
-    columns:
-      - name: account_id
-        description: "Primary key for account"
-        tests:
-          - unique
-          - not_null
-      - name: customer_id
-        description: "Foreign key to customer"
-        tests:
-          - not_null
-
-  - name: stg_transaction
-    description: "Staging model for transaction data"
+  - name: fact_transaction
+    description: "Fact table storing all financial transactions."
     columns:
       - name: transaction_id
-        description: "Primary key for transaction"
         tests:
+          - unique
           - not_null
+
       - name: account_id
-        description: "Foreign key to account"
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_account')
+              field: account_id
+
+      - name: transaction_date
+        tests:
+          - not_null
+
+      - name: amount
+        tests:
+          - not_null
+
+  - name: int_daily_balance
+    description: "Daily running balance per account."
+    columns:
+      - name: account_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_account')
+              field: account_id
+
+      - name: date
+        tests:
+          - not_null
+
+      - name: running_balance
+        description: "Cumulative balance."

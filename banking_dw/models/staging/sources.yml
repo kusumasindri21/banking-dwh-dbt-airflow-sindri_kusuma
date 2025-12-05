@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: banking
-    schema: main_main   # <---- ubah ke ini
+    schema: main_main
     tables:
-      - name: customers   # <--- Sesuaikan nama tabel aslinya
+      - name: customers
       - name: accounts
       - name: transactions

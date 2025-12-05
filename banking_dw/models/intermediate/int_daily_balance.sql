@@ -1,4 +1,3 @@
--- int_daily_balance.sql
 select
     account_id,
     date(transaction_date) as date,
