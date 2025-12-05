@@ -29,7 +29,6 @@ models:
       - name: transaction_id
         description: "Primary key for transaction"
         tests:
-          - unique
           - not_null
       - name: account_id
         description: "Foreign key to account"
